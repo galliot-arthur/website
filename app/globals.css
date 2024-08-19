@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: #000000;
+  --background-start-rgb: white;
+  --background-end-rgb: red;
+}
+
+body {
+  color: var(--foreground-rgb);
+  background: radial-gradient(
+    farthest-corner circle at -10% -10% in oklab,
+    var(--background-end-rgb) 0%,
+    var(--background-start-rgb) 20%
+  );
+}
