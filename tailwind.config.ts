@@ -28,6 +28,12 @@ const config: Config = {
       borderColor: {
         white: "transparent",
       },
+      colors: {
+        gray: { 500: "red" },
+      },
+      fontSize: {
+        xs: "11.5px",
+      },
       keyframes: {
         fade: {
           "0%": { opacity: "1" },

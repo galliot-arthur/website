@@ -27,18 +27,16 @@ export default function RootLayout({
         <div>
           <header className="col-span-5 md:col-span-1">
             <div className=" border-2 border-white shadow-small rounded-xl p-2">
-              <p className="text-lg bg-white">Posters</p>
-              <p className="text-xs text-gray-500 bg-white mt-2">
-                Hi, my name is Arthur Galliot and
-                <br />
-                time to time,
-                <br />I draw posters.
+              <p className="text-lg">Posters</p>
+              <p className="text-xs text-gray-500 mt-2">
+                Hi, my name is Arthur Galliot and time to time,
+                <br />I design posters.
               </p>
             </div>
           </header>
           <nav
             className={classNames(
-              "hidden md:block  border-2 border-white shadow-small rounded-xl p-2",
+              "hidden md:block border-2 border-white shadow-small rounded-xl p-2",
               "fixed bottom-8 w-[calc((100vw-6rem)/5)]"
             )}
           >
@@ -71,7 +69,7 @@ export default function RootLayout({
             @copyright arthur galliot 2016-2024
           </div>
         </aside>
-        <div className="fixed h-[100vh] w-[calc(((100vw-6rem)/5)*3+3rem)] top-0 left-0 z-[-1] shadow-book"></div>
+        <div className="fixed h-[100vh] w-[calc(((100vw-6rem)/5)*3+3rem)] border-2 border-r-black bg-white top-0 left-0 z-[-1] shadow-book"></div>
       </body>
     </html>
   );

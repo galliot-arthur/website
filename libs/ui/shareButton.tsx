@@ -13,7 +13,7 @@ export const ShareButton = ({ path }: { path: string }) => {
   return (
     <>
       <button
-        className="transition-all text-xs p-2 rounded-full  shadow-small border-2 border-white active:bg-blue-500 active:text-blue-500"
+        className="transition-all text-xs p-2 rounded-full shadow-small border-2 border-white active:bg-gray-500 active:text-gray-500"
         onClick={(e) => {
           e.preventDefault();
           setShared(true);
