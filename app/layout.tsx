@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { Hachi_Maru_Pop } from "next/font/google";
+import {
+  Inter,
+  //Hachi_Maru_Pop
+} from "next/font/google";
 import "./globals.css";
 import classNames from "classnames";
 import { mock } from "@/libs/mock";
 
-const inter = Hachi_Maru_Pop({ subsets: ["latin"], weight: "400" });
+const inter = Inter({ subsets: ["latin"], weight: ["200", "500"] });
 
 export const metadata: Metadata = {
   title: "Posters",
@@ -27,8 +30,8 @@ export default function RootLayout({
         <div>
           <header className="col-span-5 md:col-span-1">
             <div className=" border-2 border-white shadow-small rounded-xl p-2">
-              <p className="text-lg">Posters</p>
-              <p className="text-xs text-gray-500 mt-2">
+              <p className="text-3xl -ml-0.5">Posters</p>
+              <p className="text-xs font-extralight">
                 Hi, my name is Arthur Galliot and time to time,
                 <br />I design posters.
               </p>
@@ -42,13 +45,13 @@ export default function RootLayout({
           >
             <ul>
               {mock.map((poster) => (
-                <li key={poster.path}>
+                <li key={poster.name}>
                   <a
-                    href={`#${poster.path}`}
+                    href={`#${poster.name}`}
                     className="transition-all hover:text-gray-500 bg-white text-sm"
                   >
                     {poster.name}
-                    <span className="text-xs text-gray-500 bg-white ml-2">
+                    <span className="text-xs bg-white ml-1 font-extralight">
                       {poster.date}
                     </span>
                   </a>
@@ -57,19 +60,18 @@ export default function RootLayout({
             </ul>
           </nav>
         </div>
-
-        {children}
         <div className="col-span-5 md:col-span-1 "></div>
+        {children}
+
         <aside className="col-span-5 md:col-span-1">
           <div className="border-2 border-white shadow-small rounded-xl p-2">
-            <p className="text-xs text-gray-500 bg-white">Need some?</p>
+            <p className="text-xs font-extralight bg-white">Need some?</p>
             <p className="text-xs">arthur.galliot@gmail.com</p>
           </div>
-          <div className="relative md:absolute md:bottom-8 border-2 border-transparent p-2 text-xs text-gray-500 bg-white">
+          <div className="relative md:absolute md:bottom-8 border-2 border-transparent p-2 text-xs font-extralight bg-white">
             @copyright arthur galliot 2016-2024
           </div>
         </aside>
-        <div className="fixed h-[100vh] w-[calc(((100vw-6rem)/5)*3+3rem)] border-2 border-r-black bg-white top-0 left-0 z-[-1] shadow-book"></div>
       </body>
     </html>
   );

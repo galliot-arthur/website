@@ -2,99 +2,10 @@
   "root": true,
   "ignorePatterns": ["**/*"],
   "reportUnusedDisableDirectives": true,
-  "plugins": ["@nx"],
   "parserOptions": {
     "warnOnUnsupportedTypescriptVersion": true,
     "sourceType": "module",
     "ecmaVersion": 2021,
     "project": "./tsconfig.base.json"
-  },
-  "overrides": [
-    {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
-      "rules": {
-        "@typescript-eslint/no-extra-semi": "error",
-        "no-extra-semi": "off"
-      }
-    },
-    {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
-      "rules": {
-        "no-console": "warn",
-        "no-nested-ternary": "error",
-        "curly": "error",
-        "no-duplicate-imports": "error",
-        "object-shorthand": ["error", "consistent-as-needed"],
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/array-type": [
-          "warn",
-          {
-            "default": "array-simple"
-          }
-        ],
-        "@typescript-eslint/no-non-null-assertion": "error",
-        "@typescript-eslint/ban-ts-comment": [
-          "error",
-          {
-            "ts-expect-error": "allow-with-description",
-            "ts-ignore": "allow-with-description",
-            "ts-nocheck": true,
-            "ts-check": false,
-            "minimumDescriptionLength": 3
-          }
-        ],
-        "no-use-before-define": [
-          "error",
-          {
-            "functions": false,
-            "classes": true,
-            "variables": false
-          }
-        ],
-        "@typescript-eslint/consistent-type-assertions": [
-          "error",
-          {
-            "assertionStyle": "as",
-            "objectLiteralTypeAssertions": "never"
-          }
-        ],
-        "@typescript-eslint/no-confusing-non-null-assertion": "error",
-        "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
-        "@typescript-eslint/no-require-imports": "error",
-        "no-array-constructor": "error",
-        "no-throw-literal": "error",
-        "@nx/enforce-module-boundaries": [
-          "error",
-          {
-            "depConstraints": [
-              {
-                "sourceTag": "scope:shared",
-                "onlyDependOnLibsWithTags": ["scope:shared"]
-              },
-              {
-                "sourceTag": "scope:api",
-                "onlyDependOnLibsWithTags": ["scope:shared", "scope:api"]
-              },
-              {
-                "sourceTag": "scope:front",
-                "onlyDependOnLibsWithTags": ["scope:shared", "scope:front"]
-              }
-            ]
-          }
-        ],
-        "@typescript-eslint/no-unused-vars": [
-          "error",
-          {
-            "argsIgnorePattern": "^_",
-            "varsIgnorePattern": "^_",
-            "caughtErrorsIgnorePattern": "^_"
-          }
-        ],
-        "@typescript-eslint/no-extra-semi": "error",
-        "no-extra-semi": "off"
-      }
-    }
-  ]
+  }
 }

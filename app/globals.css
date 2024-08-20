@@ -10,9 +10,57 @@
 
 body {
   color: var(--foreground-rgb);
-  background: radial-gradient(
-    farthest-corner circle at -10% -10% in oklab,
-    var(--background-end-rgb) 0%,
-    var(--background-start-rgb) 20%
-  );
+}
+
+.shadow-book {
+  background: linear-gradient(135deg, red 0%, rgb(255, 255, 255) 10%);
+}
+
+.slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  /*
+  scroll-snap-points-x: repeat(300px);
+  scroll-snap-type: mandatory;
+  */
+}
+.slides::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+.slides::-webkit-scrollbar-thumb {
+  background: black;
+}
+.slides::-webkit-scrollbar-track {
+  background: transparent;
+}
+.slides > img {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+}
+
+.boom {
+  box-shadow: 0 0 0 1px inset black;
+}
+
+.fade-in {
+  animation: slidein 0.3s ease-in-out;
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

@@ -17,6 +17,7 @@ const config: Config = {
       boxShadow: {
         small: "none",
         mine: "none",
+        inset: "0 0 0 1px black inset",
       },
       animation: {
         fade: "fade 1s ease-in-out",
@@ -27,6 +28,9 @@ const config: Config = {
       },
       borderColor: {
         white: "transparent",
+      },
+      borderWidth: {
+        1: "1px",
       },
       colors: {
         gray: { 500: "red" },

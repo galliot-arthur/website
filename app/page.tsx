@@ -1,44 +1,39 @@
 import { mock } from "@/libs/mock";
+import Carousel from "@/libs/ui/Carousel";
 import { ShareButton } from "@/libs/ui/shareButton";
-
-const getHref = (path: string) => `/pictures/${path}`;
 
 export default function Home() {
   return (
-    <main className="col-span-5 md:col-span-2 flex min-h-screen flex-col items-start justify-between gap-4 md:gap-16">
+    <main className="col-span-5 md:col-span-2 flex min-h-screen flex-col items-start justify-between gap-4 md:gap-16 relative ">
       {mock.map((project) => (
-        <a
-          key={project.path}
-          className="transition-all border-2 border-white md:hover:border-l-black p-2 rounded-xl shadow-mine hover:text-gray-500 relative"
-          href={getHref(project.path)}
-          target="_black"
-          id={project.path}
+        <div
+          key={project.name}
+          className="transition-all border-2 border-white p-2 rounded-xl boom"
+          id={project.name}
         >
           <div className="relative rounded-lg overflow-hidden 2xl:w-[calc((100vw-6rem)/5-1rem-4px)]">
-            <img
-              src={getHref(project.path)}
-              alt={project.name}
-              className="object-contain"
-            />
+            <Carousel data={project} />
           </div>
           <div className="flex flex-row justify-between items-start pt-4">
             <div>
               <p>
                 <span className="bg-white">{project.name}</span>
                 <br />
-                <span className="text-xs text-gray-500 bg-white">
-                  {project.name}
-                </span>
+                {project.subtitle && (
+                  <span className="text-xs bg-white font-extralight">
+                    {project.subtitle}
+                  </span>
+                )}
               </p>
             </div>
             <div>
-              <p className="text-xs text-gray-500 bg-white">{project.date}</p>
+              <p className="text-xs font-extralight bg-white">{project.date}</p>
               <div className="">
-                <ShareButton path={project.path} />
+                <ShareButton path={project.name} />
               </div>
             </div>
           </div>
-        </a>
+        </div>
       ))}
     </main>
   );
