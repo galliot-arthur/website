@@ -180,5 +180,10 @@ const mockedData: MockedData[] = [
 ];
 
 export const mock = mockedData.sort((a, b) => {
+
+  if (Number(b.date) === Number(a.date)){
+    return b.name.localeCompare(b.name)
+  }
+
   return Number(b.date) - Number(a.date);
 });

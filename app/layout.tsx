@@ -40,7 +40,7 @@ export default function RootLayout({
           <nav
             className={classNames(
               "hidden md:block border-2 border-white shadow-small rounded-xl p-2",
-              "fixed bottom-8 w-[calc((100vw-6rem)/5)]"
+              "fixed bottom-8 w-[calc((100vw-6rem)/5)] max-h-[80vh] overflow-auto"
             )}
           >
             <ul>
@@ -48,10 +48,10 @@ export default function RootLayout({
                 <li key={poster.name}>
                   <a
                     href={`#${poster.name}`}
-                    className="transition-all hover:text-gray-500 bg-white text-sm"
+                    className="transition-all hover:text-white hover:bg-black bg-white text-sm"
                   >
                     {poster.name}
-                    <span className="text-xs bg-white ml-1 font-extralight">
+                    <span className="text-xs ml-1 font-extralight">
                       {poster.date}
                     </span>
                   </a>
@@ -60,9 +60,9 @@ export default function RootLayout({
             </ul>
           </nav>
         </div>
-        <div className="col-span-5 md:col-span-1 "></div>
+        
         {children}
-
+        <div className="col-span-5 md:col-span-1 "></div>
         <aside className="col-span-5 md:col-span-1">
           <div className="border-2 border-white shadow-small rounded-xl p-2">
             <p className="text-xs font-extralight bg-white">Need some?</p>
