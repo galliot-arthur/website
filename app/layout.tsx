@@ -27,8 +27,8 @@ export default function RootLayout({
           "grid md:grid-cols-5 gap-4 p-4 sm:p-4"
         )}
       >
-        <div>
-          <header className="col-span-5 md:col-span-1">
+        <div className="col-span-5 md:col-span-2 lg:col-span-1">
+          <header >
             <div className=" border-2 border-white shadow-small rounded-xl p-2">
               <p className="text-3xl -ml-0.5">Posters</p>
               <p className="text-xs font-extralight">
@@ -40,7 +40,8 @@ export default function RootLayout({
           <nav
             className={classNames(
               "hidden md:block border-2 border-white shadow-small rounded-xl p-2",
-              "fixed bottom-8 w-[calc((100vw-6rem)/5)] max-h-[80vh] overflow-auto"
+              "fixed bottom-8 max-h-[80vh] overflow-auto",
+              "md:w-[calc(((100vw-6rem)/5)*2+1rem)] lg:w-[calc((100vw-6rem)/5)]"
             )}
           >
             <ul>
@@ -62,7 +63,7 @@ export default function RootLayout({
         </div>
         
         {children}
-        <div className="col-span-5 md:col-span-1 "></div>
+        <div className="hidden lg:block lg:col-span-1"></div>
         <aside className="col-span-5 md:col-span-1">
           <div className="border-2 border-white shadow-small rounded-xl p-2">
             <p className="text-xs font-extralight bg-white">Need some?</p>
